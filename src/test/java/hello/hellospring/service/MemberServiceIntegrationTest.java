@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+
 @SpringBootTest
 @Transactional
 class MemberServiceIntegrationTest {
@@ -34,10 +35,10 @@ class MemberServiceIntegrationTest {
     public void 중복_회원_예외(){
         //given
         Member member1 = new Member();
-        member1.setName("spring2");
+        member1.setName("spring1");
 
         Member member2 = new Member();
-        member2.setName("spring3");
+        member2.setName("spring1");
 
         //when
         memberService.join(member1);
